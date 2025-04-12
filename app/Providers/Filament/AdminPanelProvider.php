@@ -7,6 +7,7 @@ use Filament\Panel;
 use Filament\Widgets;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use App\Filament\Widgets\Pendapatan;
 use App\Filament\Pages\Auth\Register;
 use Filament\Http\Middleware\Authenticate;
 use App\Filament\Widgets\DashboardOverview;
@@ -41,6 +42,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 DashboardOverview::class,
+                Pendapatan::class
             ])
             ->middleware([
                 EncryptCookies::class,
