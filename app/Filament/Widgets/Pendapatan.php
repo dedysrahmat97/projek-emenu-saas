@@ -9,8 +9,11 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\QueryBuilder;
 use Filament\Tables\Columns\Summarizers\Sum;
+use pxlrbt\FilamentExcel\Exports\ExcelExport;
 use Filament\Tables\Columns\Summarizers\Count;
 use Filament\Widgets\TableWidget as BaseWidget;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportAction;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
 use Filament\Tables\Filters\QueryBuilder\Constraints\DateConstraint;
 use Malzariey\FilamentDaterangepickerFilter\Filters\DateRangeFilter;
 
@@ -45,6 +48,9 @@ class Pendapatan extends BaseWidget
                     ])
             ->filters([
                 DateRangeFilter::make('created_at'),
+            ])
+            ->bulkActions([
+                ExportBulkAction::make(),
             ]);
     }
 
