@@ -12,6 +12,7 @@ use Filament\Tables\Columns\Summarizers\Sum;
 use Filament\Tables\Columns\Summarizers\Count;
 use Filament\Widgets\TableWidget as BaseWidget;
 use Filament\Tables\Filters\QueryBuilder\Constraints\DateConstraint;
+use Malzariey\FilamentDaterangepickerFilter\Filters\DateRangeFilter;
 
 class Pendapatan extends BaseWidget
 {
@@ -41,9 +42,10 @@ class Pendapatan extends BaseWidget
                     ])
                     ->sortable(),
                 TextColumn::make('created_at')->label('Tanggal')->dateTime('d M Y'),
-                    ]);
-            
+                    ])
+            ->filters([
+                DateRangeFilter::make('created_at'),
+            ]);
     }
 
-    
 }
