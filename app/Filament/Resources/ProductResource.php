@@ -91,6 +91,9 @@ class ProductResource extends Resource
                     ->hidden(fn() => auth()->user()->role == 'admin'),
                 Forms\Components\FileUpload::make('image')
                     ->label('Foto Menu')
+                    ->disk('public')
+                    ->directory('produk')
+                    ->visibility('public')
                     ->required()
                     ->image(),
                 Forms\Components\TextInput::make('name')

@@ -33,6 +33,9 @@ class UserResource extends Resource
                 Forms\Components\FileUpload::make('logo')
                     ->label('Logo Toko')
                     ->image()
+                    ->disk('public')
+                    ->directory('logo-toko')
+                    ->visibility('public')
                     ->required(),
                 Forms\Components\TextInput::make('name')
                     ->label('Nama Toko')

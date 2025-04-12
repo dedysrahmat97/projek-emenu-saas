@@ -49,6 +49,9 @@ class ProductCategoryResource extends Resource
                     ->required(),
                 Forms\Components\FileUpload::make('icon')
                     ->label('Ikon Kategori')
+                    ->disk('public')
+                    ->directory('kategori-produk')
+                    ->visibility('public')
                     ->required(),
             ]);
     }
